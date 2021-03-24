@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack{
+            ForEach(0..<5) { row in
+                VStack{
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.green)
+                        .frame(width: 70, height: 70)
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.green)
+                        .frame(width: 70, height: 70)
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.green)
+                        .frame(width: 70, height: 70)
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.green)
+                        .frame(width: 70, height: 70)
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.green)
+                        .frame(width: 70, height: 70)
+                }
+            }
+        }
+        
+        
     }
 }
 
