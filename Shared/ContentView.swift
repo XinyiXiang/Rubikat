@@ -29,7 +29,7 @@ struct BlocksView: View {
     @State private var randomColor : Color = .green
     
     let rows = Row.create()
-    let colors: KeyValuePairs = ["red": 4,"blue": 4,"yellow": 4,"green": 4,"orange":4 ,"white":4]
+    let colorsDict: Dictionary = [Color(.red): 4,Color(.blue): 4,Color(.yellow): 4,Color(.green): 4,Color(.orange):4 ,Color(.white):4]
     
     var body: some View {
         VStack {
@@ -37,7 +37,6 @@ struct BlocksView: View {
                 HStack(alignment: .center) {
                     ForEach(row.blocks) { block in
                         RoundedRectangle(cornerRadius: 20.0)
-                            //TODO: Make blocks fill in random colors
                             .fill(randomColor)
                             .frame(width: sideLength, height: sideLength)
                     }
@@ -45,7 +44,7 @@ struct BlocksView: View {
             }
             
             Button(action: {
-                // self.randomColor = colors[shuffle()]
+                self.randomColor = Array(colorsDict).first!.key
             }, label: {
                 Text("Shuffle")
                     .foregroundColor(.white)
