@@ -67,8 +67,6 @@ struct BlocksView: View {
 struct ContentView: View {
     
     var body: some View {
-        //let blockBoard = Block.chunked(into: 5)
-        
         BlocksView().padding()
         
     }
