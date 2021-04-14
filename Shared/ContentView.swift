@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreGraphics
 
 extension Array {
     func chunked(into size:Int) -> [[Element]]{
@@ -25,11 +26,11 @@ extension Array {
 }
 
 struct BlocksView: View {
-    @State private var randomColor : NSColor = .green
+    @State private var randomColor = Color.green
     var sideLength: CGFloat = 60
     
     let rows = Row.create()
-    let colorsDict: [NSColor: Int] = [Color(.red): 4,Color(.blue): 4,Color(.yellow): 4,Color(.green): 4,Color(.orange):4, Color(.white):4]
+    let colorsDict: [Color: Int] = [Color.red: 4,Color.blue: 4,Color.yellow: 4,Color.green: 4,Color.orange:4, Color.clear:4]
     
     var body: some View {
         VStack {
@@ -67,7 +68,8 @@ struct BlocksView: View {
 struct ContentView: View {
     
     var body: some View {
-        BlocksView().padding()
+        BlocksView()
+            .padding()
         
     }
 }
