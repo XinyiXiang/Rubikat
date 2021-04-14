@@ -43,18 +43,19 @@ struct BlocksView: View {
                     }
                 }
             }
-            
+            .padding(.bottom)
             Button(action: {
-                self.randomColor = Array(colorsDict)[0].key
-            }, label: {
-                Text("Shuffle")
-                    .foregroundColor(.white)
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            })
-            .background(Color.yellow)
-            .cornerRadius(5.0)
-            .padding()
+                self.randomColor = Array(colorsDict)[shuffle()].key
+                print("Blocks Shuffled")
+            }){
+                HStack{
+                    Image(systemName: "shuffle")
+                }
+                .background(Color.purple)
+                .font(.largeTitle)
+                .cornerRadius(5.0)
+                
+            }
         }
     }
     
@@ -69,7 +70,6 @@ struct ContentView: View {
     
     var body: some View {
         BlocksView()
-            .padding()
         
     }
 }
