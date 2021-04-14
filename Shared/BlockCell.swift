@@ -23,10 +23,6 @@ extension Row {
             Row(blocks: [Block(), Block(),Block(),Block(),Block()])
         ]
     }
-    func shuffle() -> Int {
-        let randomColorIndex = Int.random(in: 0..<5)
-        return randomColorIndex
-    }
 }
 
 struct Block: Identifiable{

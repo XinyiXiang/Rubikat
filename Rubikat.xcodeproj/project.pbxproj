@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72B986926269E43000D7FBA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B986826269E43000D7FBA /* GameView.swift */; };
+		F72B986A26269E43000D7FBA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B986826269E43000D7FBA /* GameView.swift */; };
+		F72B98742626AAB2000D7FBA /* ShuffleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B98732626AAB2000D7FBA /* ShuffleButton.swift */; };
+		F72B98752626AAB2000D7FBA /* ShuffleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B98732626AAB2000D7FBA /* ShuffleButton.swift */; };
 		F72F8023260AE8EE0016642E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F8022260AE8EE0016642E /* Tests_iOS.swift */; };
 		F72F802E260AE8EF0016642E /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F802D260AE8EF0016642E /* Tests_macOS.swift */; };
 		F72F8030260AE8EF0016642E /* RubikatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F8007260AE8ED0016642E /* RubikatApp.swift */; };
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F72B986826269E43000D7FBA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F72B98732626AAB2000D7FBA /* ShuffleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleButton.swift; sourceTree = "<group>"; };
 		F72F8007260AE8ED0016642E /* RubikatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubikatApp.swift; sourceTree = "<group>"; };
 		F72F8008260AE8ED0016642E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F72F8009260AE8EE0016642E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 			children = (
 				F72F8007260AE8ED0016642E /* RubikatApp.swift */,
 				F72F8008260AE8ED0016642E /* ContentView.swift */,
+				F72B986826269E43000D7FBA /* GameView.swift */,
+				F72B98732626AAB2000D7FBA /* ShuffleButton.swift */,
 				F7416BDB260BF8C3004D47D3 /* BlockCell.swift */,
 				F72F8009260AE8EE0016642E /* Assets.xcassets */,
 			);
@@ -314,6 +322,8 @@
 			files = (
 				F72F8032260AE8EF0016642E /* ContentView.swift in Sources */,
 				F72F8030260AE8EF0016642E /* RubikatApp.swift in Sources */,
+				F72B986926269E43000D7FBA /* GameView.swift in Sources */,
+				F72B98742626AAB2000D7FBA /* ShuffleButton.swift in Sources */,
 				F7416BDC260BF8C3004D47D3 /* BlockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +334,8 @@
 			files = (
 				F72F8033260AE8EF0016642E /* ContentView.swift in Sources */,
 				F72F8031260AE8EF0016642E /* RubikatApp.swift in Sources */,
+				F72B986A26269E43000D7FBA /* GameView.swift in Sources */,
+				F72B98752626AAB2000D7FBA /* ShuffleButton.swift in Sources */,
 				F7416BDD260BF8C3004D47D3 /* BlockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
