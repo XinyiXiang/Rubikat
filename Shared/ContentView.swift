@@ -25,11 +25,11 @@ extension Array {
 }
 
 struct BlocksView: View {
+    @State private var randomColor : NSColor = .green
     var sideLength: CGFloat = 60
-    @State private var randomColor : Color = .green
     
     let rows = Row.create()
-    let colorsDict: Dictionary = [Color(.red): 4,Color(.blue): 4,Color(.yellow): 4,Color(.green): 4,Color(.orange):4 ,Color(.white):4]
+    let colorsDict: [NSColor: Int] = [Color(.red): 4,Color(.blue): 4,Color(.yellow): 4,Color(.green): 4,Color(.orange):4, Color(.white):4]
     
     var body: some View {
         VStack {
@@ -44,7 +44,7 @@ struct BlocksView: View {
             }
             
             Button(action: {
-                self.randomColor = Array(colorsDict).first!.key
+                self.randomColor = Array(colorsDict)[0].key
             }, label: {
                 Text("Shuffle")
                     .foregroundColor(.white)
