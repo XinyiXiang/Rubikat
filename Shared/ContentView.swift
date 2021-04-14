@@ -8,29 +8,13 @@
 import SwiftUI
 import CoreGraphics
 
-extension Array {
-    func chunked(into size:Int) -> [[Element]]{
-        var blockArray = [[Element]]()
-    
-        for index in 0..<self.count{
-            if (index % size == 0 && index != 0) {
-                blockArray.append(Array(self[(index - size)..<index]))
-            }
-            else if(index == self.count){
-                blockArray.append(Array(self[index - 1..<index]))
-            }
-        }
-        
-        return blockArray
-    }
-}
 
 struct BlocksView: View {
     @State private var randomColor = Color.green
     var sideLength: CGFloat = 60
     
     let rows = Row.create()
-    let colorsDict: [Color: Int] = [Color.red: 4,Color.blue: 4,Color.yellow: 4,Color.green: 4,Color.orange:4, Color.clear:4]
+    let colorsDict: [Color: Int] = [Color.red: 4,Color.blue: 4,Color.yellow: 4,Color.green: 4,Color.orange:4, Color.white:4]
     
     var body: some View {
         VStack {
@@ -38,7 +22,7 @@ struct BlocksView: View {
                 HStack(alignment: .center) {
                     ForEach(row.blocks) { block in
                         RoundedRectangle(cornerRadius: 20.0)
-                            .fill(randomColor)
+                            .fill(Array(colorsDict)[shuffle()].key)
                             .frame(width: sideLength, height: sideLength)
                     }
                 }
@@ -50,8 +34,11 @@ struct BlocksView: View {
             }){
                 HStack{
                     Image(systemName: "shuffle")
+                    Text("Shuffle")
+                        .bold()
                 }
-                .background(Color.purple)
+                .foregroundColor(Color.white)
+                .background(Color.yellow)
                 .font(.largeTitle)
                 .cornerRadius(5.0)
                 
@@ -61,7 +48,6 @@ struct BlocksView: View {
     
     func shuffle() -> Int {
         let randomColorIndex = Int.random(in: 0..<5)
-        
         return randomColorIndex
     }
 }
