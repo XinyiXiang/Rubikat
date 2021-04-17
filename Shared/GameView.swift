@@ -10,11 +10,12 @@ import CoreGraphics
 
 
 struct GameView: View {
-
+    var colorsDict: [Color: Int] = [Color.red: 4,Color.blue: 4,Color.yellow: 4,Color.green: 4,Color.orange:4, Color.white:4]
+    let randomColorIndex = shuffle()
     let rows = Row.create()
-    let colorsDict: [Color: Int] = [Color.red: 4,Color.blue: 4,Color.yellow: 4,Color.green: 4,Color.orange:4, Color.white:4]
     
-    @State private var didShuffle: Bool = true
+    @State
+    private var didShuffle: Bool = true
     var sideLength: CGFloat = 60.0
     
     var body: some View {
@@ -24,7 +25,7 @@ struct GameView: View {
                     HStack(alignment: .center) {
                         ForEach(row.blocks) { block in
                             RoundedRectangle(cornerRadius: 20.0)
-                                .fill(Array(colorsDict)[shuffle()].key)
+                                .fill(Array(colorsDict)[randomColorIndex].key)
                                 .frame(width: sideLength, height: sideLength)
                         }
                     }
@@ -32,13 +33,19 @@ struct GameView: View {
                 .padding(.bottom)
             }
             ShuffleButton(didShuffle: $didShuffle)
-            
         }
-        
     }
     
-    private func shuffle() -> Int {
-       let randomColorIndex = Int.random(in: 0..<5)
+    mutating func shuffle() -> Int {
+       var randomColorIndex = Int.random(in: 0..<5)
+       if(Array(colorsDict)[randomColorIndex].value == 0){
+           randomColorIndex = shuffle()
+       }
+       else {
+        let oldVal = Array(colorsDict)[randomColorIndex].value
+        colorsDict.updateValue(oldVal, forKey: Array(colorsDict)[randomColorIndex].key)
+        //forKey: Array(colorsDict)[randomColorIndex].key
+       }
        return randomColorIndex
    }
 }
@@ -48,7 +55,5 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
-            
-            
     }
 }

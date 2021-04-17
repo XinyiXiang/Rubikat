@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreGraphics
 
-
 struct ContentView: View {
     var body: some View {
         GameView()
