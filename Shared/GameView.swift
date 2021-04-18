@@ -16,6 +16,7 @@ struct DraggableRect : View {
     
     @State
     private var location = CGPoint(x:30,y:30)
+    
     @GestureState
     var draggedOffset = CGSize.zero
     
@@ -26,15 +27,27 @@ struct DraggableRect : View {
             .animation(.spring())
             .offset(x: self.draggedOffset.width, y: self.draggedOffset.height)
             .gesture(
-                DragGesture().updating($draggedOffset, body: { value, state, transaction in state = value.translation})
+                DragGesture().updating($draggedOffset, body: { value, state, transaction in
+                                        state = value.translation})
                     .onEnded{ value in
-                        if (abs(self.draggedOffset.width - 60.0) != 0) {
-                            self.location = value.location
+                        if (abs(value.location.x - self.location.x) > 60.0) {
+                            if(value.location.x - self.location.x > 60.0){
+                                self.location.x = CGFloat(self.location.x + 67.5)
+                            }
+                            else if (value.location.x - self.location.x < -60.0){
+                                self.location.x = CGFloat(self.location.x - 67.5)
+                            }
                         }
-                        else if (abs(self.draggedOffset.height - 60.0) != 0) {
-                            self.location = value.location
+                        else if (abs(value.location.y - self.location.y) > 60.0) {
+                            if(value.location.y - self.location.y > 60.0){
+                                self.location.y = CGFloat(self.location.y + 82.5)
+                            }
+                            else if (value.location.y - self.location.y < -60.0){
+                                self.location.y = CGFloat(self.location.y - 82.5)
+                            }
                         }
                         else {
+                            
                         }
                     })
     }
@@ -58,7 +71,7 @@ struct GameView: View {
                             ForEach(0..<5) {colIndex in
                                 VStack{
                                         DraggableRect(rowId: rowIndex, colId: colIndex)
-                                            .frame(width: sideLength, height: sideLength)
+                                            .frame(width: sideLength, height: sideLength, alignment: .leading)
                                             
                                 }
                             }
