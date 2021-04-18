@@ -19,8 +19,8 @@
 		F72F8033260AE8EF0016642E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F8008260AE8ED0016642E /* ContentView.swift */; };
 		F72F8034260AE8EF0016642E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72F8009260AE8EE0016642E /* Assets.xcassets */; };
 		F72F8035260AE8EF0016642E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72F8009260AE8EE0016642E /* Assets.xcassets */; };
-		F7416BDC260BF8C3004D47D3 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7416BDB260BF8C3004D47D3 /* BlockCell.swift */; };
-		F7416BDD260BF8C3004D47D3 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7416BDB260BF8C3004D47D3 /* BlockCell.swift */; };
+		F7416BDC260BF8C3004D47D3 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7416BDB260BF8C3004D47D3 /* Grid.swift */; };
+		F7416BDD260BF8C3004D47D3 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7416BDB260BF8C3004D47D3 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		F72F8029260AE8EF0016642E /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72F802D260AE8EF0016642E /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		F72F802F260AE8EF0016642E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7416BDB260BF8C3004D47D3 /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
+		F7416BDB260BF8C3004D47D3 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +109,9 @@
 			children = (
 				F72F8007260AE8ED0016642E /* RubikatApp.swift */,
 				F72F8008260AE8ED0016642E /* ContentView.swift */,
+				F7416BDB260BF8C3004D47D3 /* Grid.swift */,
 				F72B986826269E43000D7FBA /* GameView.swift */,
 				F72B98732626AAB2000D7FBA /* ShuffleButton.swift */,
-				F7416BDB260BF8C3004D47D3 /* BlockCell.swift */,
 				F72F8009260AE8EE0016642E /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -324,7 +324,7 @@
 				F72F8030260AE8EF0016642E /* RubikatApp.swift in Sources */,
 				F72B986926269E43000D7FBA /* GameView.swift in Sources */,
 				F72B98742626AAB2000D7FBA /* ShuffleButton.swift in Sources */,
-				F7416BDC260BF8C3004D47D3 /* BlockCell.swift in Sources */,
+				F7416BDC260BF8C3004D47D3 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +336,7 @@
 				F72F8031260AE8EF0016642E /* RubikatApp.swift in Sources */,
 				F72B986A26269E43000D7FBA /* GameView.swift in Sources */,
 				F72B98752626AAB2000D7FBA /* ShuffleButton.swift in Sources */,
-				F7416BDD260BF8C3004D47D3 /* BlockCell.swift in Sources */,
+				F7416BDD260BF8C3004D47D3 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
