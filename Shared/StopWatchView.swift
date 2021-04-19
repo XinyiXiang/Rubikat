@@ -13,14 +13,12 @@ struct StopWatchView: View {
     var stopWatch = StopWatch()
     
     var body: some View {
-        
-        HStack {
             VStack{
                 Text(self.stopWatch.stopWatchTime)
                     .font(.custom("courier", size: 70))
                     .foregroundColor(Color.gray)
                     .frame(width: UIScreen.main.bounds.size.width,
-                           height: 40,
+                           height: 10,
                            alignment: .center)
                     .padding(.bottom)
                     HStack{
@@ -35,10 +33,9 @@ struct StopWatchView: View {
                                         isPaused: self.stopWatch.isPaused())
                             .cornerRadius(15.0)
                     }
+                CenterGridView()
+                    .offset(x:100,y: -30)
             }
-            CenterGridView()
-        }
-        
         }
 }
 

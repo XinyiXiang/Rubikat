@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreGraphics
 
-public struct DraggableRect : View {
+struct DraggableRect : View {
     var rowId: Int
     var colId: Int
     
@@ -20,7 +20,7 @@ public struct DraggableRect : View {
     @GestureState
     var draggedOffset = CGSize.zero
     
-    public var body : some View {
+    var body : some View {
         RoundedRectangle(cornerRadius: 20.0)
             .fill(colorsDict[rowId * 5 + colId])
             .position(location)
@@ -51,10 +51,10 @@ public struct DraggableRect : View {
     }
 }
 
-public struct GridView: View {
+struct GridView: View {
     var sideLength: CGFloat = 60.0
     
-    public var body: some View {
+    var body: some View {
         ForEach(0..<5) {rowIndex in
             HStack{
                 ForEach(0..<5) {colIndex in
@@ -70,14 +70,14 @@ public struct GridView: View {
 }
 
 
-public struct GameView: View {
+struct GameView: View {
     @State
     private var didShuffle: Bool = true
     @State
     private var showGameTitle: Bool = true
    
     
-    public var body: some View {
+    var body: some View {
         ZStack{
             if(self.didShuffle == false) {
                 Rectangle()

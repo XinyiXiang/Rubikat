@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CenterGridView: View {
-    public var sideLength: CGFloat = 20.0
-    public var body: some View {
+    var sideLength: CGFloat = 10.0
+    var body: some View {
         VStack{
             ForEach(0..<3) {rowIndex in
                 HStack{
@@ -23,7 +23,7 @@ struct CenterGridView: View {
             }
             .padding(.bottom)
         }
-        .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .leading)
+        .frame(width: 30, height: 30, alignment: .center)
     }
 }
 
@@ -32,3 +32,4 @@ struct CenterGridView_Previews: PreviewProvider {
         CenterGridView()
     }
 }
+

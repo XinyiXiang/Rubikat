@@ -128,11 +128,11 @@
 				F72B986826269E43000D7FBA /* GameView.swift */,
 				F72B98732626AAB2000D7FBA /* ShuffleButton.swift */,
 				F74FB130262CF9A70075DD1D /* ColorsDictionary.swift */,
+				F70A2389262D33460067A295 /* CenterGridView.swift */,
 				F74FB13B262D065C0075DD1D /* StopWatch.swift */,
 				F7B00E3D262D173B00B75F1A /* StopWatchButton.swift */,
 				F7B00E48262D19F800B75F1A /* StopWatchView.swift */,
 				F72F8009260AE8EE0016642E /* Assets.xcassets */,
-				F70A2389262D33460067A295 /* CenterGridView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
