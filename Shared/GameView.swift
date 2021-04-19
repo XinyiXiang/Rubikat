@@ -9,8 +9,8 @@ import SwiftUI
 import CoreGraphics
 
 struct DraggableRect : View {
-    var rowId: Int
-    var colId: Int
+    public var rowId: Int
+    public var colId: Int
     
     let colorsDict:[Color] = ColorsDictionary.createShuffled(colorsCollection: [Color.red, Color.blue, Color.yellow, Color.green, Color.orange, Color.purple])
     
@@ -18,9 +18,9 @@ struct DraggableRect : View {
     private var location = CGPoint(x:30,y:30)
     
     @GestureState
-    var draggedOffset = CGSize.zero
+    public var draggedOffset = CGSize.zero
     
-    var body : some View {
+    public var body : some View {
         RoundedRectangle(cornerRadius: 20.0)
             .fill(colorsDict[rowId * 5 + colId])
             .position(location)
@@ -52,9 +52,9 @@ struct DraggableRect : View {
 }
 
 struct GridView: View {
-    var sideLength: CGFloat = 60.0
+    public var sideLength: CGFloat = 60.0
     
-    var body: some View {
+    public var body: some View {
         ForEach(0..<5) {rowIndex in
             HStack{
                 ForEach(0..<5) {colIndex in
@@ -77,7 +77,7 @@ struct GameView: View {
     private var showGameTitle: Bool = true
    
     
-    var body: some View {
+    public var body: some View {
         ZStack{
             if(self.didShuffle == false) {
                 Rectangle()

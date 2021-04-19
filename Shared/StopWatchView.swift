@@ -10,9 +10,9 @@ import SwiftUI
 
 struct StopWatchView: View {
     @ObservedObject
-    var stopWatch = StopWatch()
+    public var stopWatch = StopWatch()
     
-    var body: some View {
+    public var body: some View {
             VStack{
                 Text(self.stopWatch.stopWatchTime)
                     .font(.custom("courier", size: 70))

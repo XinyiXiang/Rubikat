@@ -23,7 +23,7 @@ struct ShuffleButton: View {
     var showGameTitle: Bool
     var labels: [String]
     
-    var body: some View {
+    public var body: some View {
 //        VStack{
             Button(action: {
                 self.didShuffle.toggle()

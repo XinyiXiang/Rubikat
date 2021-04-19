@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct ColorsDictionary {
+public struct ColorsDictionary {
     
 }
 
 extension ColorsDictionary {
-    static func createShuffled(colorsCollection: [Color]) -> [Color] {
+    public static func createShuffled(colorsCollection: [Color]) -> [Color] {
         return (([[Color]](repeating: colorsCollection, count: 4).flatMap{$0}).shuffled() + [Color.clear])
     }
 }

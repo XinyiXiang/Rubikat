@@ -10,12 +10,12 @@ import Foundation
 import SwiftUI
 
 struct StopWatchButton : View {
-    var actions: [() -> Void]
-    var labels: [String]
-    var color: Color
-    var isPaused: Bool
+    public var actions: [() -> Void]
+    public var labels: [String]
+    public var color: Color
+    public var isPaused: Bool
     
-    var body: some View {
+    public var body: some View {
         let buttonWidth = (UIScreen.main.bounds.size.width / 4) - 12
         
         return Button(action: {
