@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct ShuffleButton: View {
-    @Binding var didShuffle: Bool
-        
+    @Binding
+    var didShuffle: Bool
+    var labels: [String]
     var body: some View {
         
         Button(action: {
             self.didShuffle.toggle()
         }){
             HStack{
-                Image(systemName: "shuffle")
-                Text("Shuffle")
-                    .bold()
+                
+                if didShuffle{
+                    Image(systemName: "gamecontroller")
+                    Text(labels[0])
+                        .bold()
+                }
+                else {
+                    Image(systemName: "shuffle")
+                    Text(labels[1])
+                        .bold()
+                }
             }
             .foregroundColor(Color.white)
             .background(Color.yellow)

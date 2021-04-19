@@ -10,7 +10,11 @@ import CoreGraphics
 
 struct ContentView: View {
     var body: some View {
-        GameView()
+        VStack{
+            
+            GameView()
+                .offset(y:50)
+        }
     }
 }
 

@@ -12,7 +12,7 @@ struct DraggableRect : View {
     var rowId: Int
     var colId: Int
     
-    var colorsDict = ([[Color]](repeating: [Color.red, Color.blue, Color.yellow, Color.green, Color.orange, Color.purple], count: 4).flatMap{$0} + [Color.clear]).shuffled()
+    let colorsDict:[Color] = ColorsDictionary.createShuffled(colorsCollection: [Color.red, Color.blue, Color.yellow, Color.green, Color.orange, Color.purple])
     
     @State
     private var location = CGPoint(x:30,y:30)
@@ -27,7 +27,8 @@ struct DraggableRect : View {
             .animation(.spring())
             .offset(x: self.draggedOffset.width, y: self.draggedOffset.height)
             .gesture(
-                DragGesture().updating($draggedOffset, body: { value, state, transaction in
+                DragGesture()
+                    .updating($draggedOffset, body: { value, state, transaction in
                                         state = value.translation})
                     .onEnded{ value in
                         if (abs(value.location.x - self.location.x) > 60.0) {
@@ -40,10 +41,10 @@ struct DraggableRect : View {
                         }
                         else if (abs(value.location.y - self.location.y) > 60.0) {
                             if(value.location.y - self.location.y > 60.0){
-                                self.location.y = CGFloat(self.location.y + 82.5)
+                                self.location.y = CGFloat(self.location.y + 83.0)
                             }
                             else if (value.location.y - self.location.y < -60.0){
-                                self.location.y = CGFloat(self.location.y - 82.5)
+                                self.location.y = CGFloat(self.location.y - 83.0)
                             }
                         }
                         else {
@@ -53,33 +54,47 @@ struct DraggableRect : View {
     }
 }
 
-struct GameView: View {
+struct GridView: View {
     var sideLength: CGFloat = 60.0
     
-    enum SwipeHorizontalDirection: String {
-        case left, right, none
+    var body: some View {
+        ForEach(0..<5) {rowIndex in
+            HStack{
+                ForEach(0..<5) {colIndex in
+                    VStack{
+                        DraggableRect(rowId: rowIndex, colId: colIndex)
+                            .frame(width: sideLength, height: sideLength, alignment: .leading)
+                    }
+                }
+            }
+        }
+        .padding(.bottom)
     }
-    
+}
+
+struct GameView: View {
     @State
     private var didShuffle: Bool = true
+   
     
     var body: some View {
-        VStack {
+        ZStack{
             if(self.didShuffle == false) {
-                    ForEach(0..<5) {rowIndex in
-                        HStack{
-                            ForEach(0..<5) {colIndex in
-                                VStack{
-                                        DraggableRect(rowId: rowIndex, colId: colIndex)
-                                            .frame(width: sideLength, height: sideLength, alignment: .leading)
-                                            
-                                }
-                            }
-                        }
-                    }
-                .padding(.bottom)
+                Rectangle()
+                    .stroke(Color.gray, lineWidth: 5.0)
+                    .foregroundColor(Color.clear)
+                    .frame(width: 205, height: 240, alignment: .center)
+                    .position(x: 195, y: 400)
             }
-            ShuffleButton(didShuffle: $didShuffle)
+            
+            VStack {
+                if(self.didShuffle == false) {
+                    StopWatchView()
+                    GridView()
+                }
+                
+                ShuffleButton(didShuffle: $didShuffle, labels: ["Start","Shuffle"])
+            }
         }
     }
 }
