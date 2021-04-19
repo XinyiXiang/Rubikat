@@ -3,7 +3,8 @@
 //  Rubikat
 //
 //  Created by Vicky Xiang on 4/18/21.
-//
+//  The template of this file is provided by Darren Leak.
+//  https://github.com/programmingwithswift/SwiftUIStopWatch
 
 import Foundation
 import SwiftUI

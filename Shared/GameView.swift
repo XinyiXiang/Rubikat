@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreGraphics
 
-struct DraggableRect : View {
+public struct DraggableRect : View {
     var rowId: Int
     var colId: Int
     
@@ -20,7 +20,7 @@ struct DraggableRect : View {
     @GestureState
     var draggedOffset = CGSize.zero
     
-    var body : some View {
+    public var body : some View {
         RoundedRectangle(cornerRadius: 20.0)
             .fill(colorsDict[rowId * 5 + colId])
             .position(location)
@@ -41,23 +41,20 @@ struct DraggableRect : View {
                         }
                         else if (abs(value.location.y - self.location.y) > 60.0) {
                             if(value.location.y - self.location.y > 60.0){
-                                self.location.y = CGFloat(self.location.y + 83.0)
+                                self.location.y = CGFloat(self.location.y + 95.0)
                             }
                             else if (value.location.y - self.location.y < -60.0){
-                                self.location.y = CGFloat(self.location.y - 83.0)
+                                self.location.y = CGFloat(self.location.y - 95.0)
                             }
-                        }
-                        else {
-                            
                         }
                     })
     }
 }
 
-struct GridView: View {
+public struct GridView: View {
     var sideLength: CGFloat = 60.0
     
-    var body: some View {
+    public var body: some View {
         ForEach(0..<5) {rowIndex in
             HStack{
                 ForEach(0..<5) {colIndex in
@@ -72,12 +69,15 @@ struct GridView: View {
     }
 }
 
-struct GameView: View {
+
+public struct GameView: View {
     @State
     private var didShuffle: Bool = true
+    @State
+    private var showGameTitle: Bool = true
    
     
-    var body: some View {
+    public var body: some View {
         ZStack{
             if(self.didShuffle == false) {
                 Rectangle()
@@ -91,9 +91,23 @@ struct GameView: View {
                 if(self.didShuffle == false) {
                     StopWatchView()
                     GridView()
+                        .frame(width: 90, height: 90, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
-                
-                ShuffleButton(didShuffle: $didShuffle, labels: ["Start","Shuffle"])
+                if self.showGameTitle {
+                    VStack{
+                        HStack{
+                            Text("😻")
+                            Text("😾")
+                            Text("🧩")
+                            Text("🙀")
+                            Text("😸")
+                        }
+                        .font(.system(size: 50))
+                        .animation(.easeIn)
+                        GameTitle()
+                    }
+                }
+                ShuffleButton(didShuffle: $didShuffle, showGameTitle: $showGameTitle,labels: ["Start","Shuffle"])
             }
         }
     }
