@@ -4,7 +4,7 @@ If you have heard of Rubik's Race before, you would probably know it is a fast p
 This playground was created within 3 days for Apple's WWDC 2021 Swift Student Challenge. To run this playground you need the [Swift Playgrounds](https://www.apple.com/swift/playgrounds/) app (preferrably for macOS). For best experience, use a device with a large screen.
 
 ## Initiatives
-Simple skills such as color identifying and movement speed was found to be essential in early cognitive development is an essential part of childhood learning, combing with Swift, Rubikat could teach children logical thinking abilities along with cognitive skills, all of these achieved by filling beautiful colors (and they are customizable) and straightforward demonstration from random shuffling.
+Simple skills such as identifying color and movement was found to be essential in early cognitive development is an essential part of childhood learning, combing with Swift, Rubikat could teach children logical thinking abilities along with cognitive skills, all of these achieved by filling beautiful colors (and they are customizable) and straightforward demonstration from random shuffling.
 
 ## Some Features
 **Flexible Game Mode**
